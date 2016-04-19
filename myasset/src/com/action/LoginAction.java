@@ -1,27 +1,29 @@
 package com.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.service.ILoginService;
+import com.service.IUserService;
 
 public class LoginAction extends ActionSupport {
 	
-	private ILoginService loginService;
-	private String username;
+	private IUserService userService;
+	private Integer userid;
 	private String userpwd;
 	
-	
-	public ILoginService getLoginService() {
-		return loginService;
-	}
-	public void setLoginService(ILoginService loginService) {
-		this.loginService = loginService;
-	}
-	public String getUsername() {
-		return username;
+	public IUserService getUserService() {
+		return userService;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserService(IUserService userService) {
+		this.userService = userService;
+	}
+	
+	
+	public Integer getUserid() {
+		return userid;
+	}
+
+	public void setUserid(Integer userid) {
+		this.userid = userid;
 	}
 
 	public String getUserpwd() {
@@ -33,9 +35,9 @@ public class LoginAction extends ActionSupport {
 	}
 
 	
-	public String login() {
-		System.out.print(this.getUsername()+"========================"+this.getUserpwd());
-		return "main";
+	public String execute() {
+		userService.getLoginUser(userid, userpwd);
+		return SUCCESS;
 	}
 
 

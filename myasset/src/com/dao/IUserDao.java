@@ -1,5 +1,7 @@
 package com.dao;
 
-public interface IUserDao {
+import java.util.List;
 
+public interface IUserDao {
+	public List getLoginUser(Integer userid,String userpwd);
 }
