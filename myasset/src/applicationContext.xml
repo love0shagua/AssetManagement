@@ -73,7 +73,7 @@
 	    pointcut-ref="bizMethods"  />
 	</aop:config>
 	
-		<!-- Dao -->
+	<!-- Dao -->
 	<bean id="userDao" class="com.dao.impl.UserDao" >
 		<property name="sessionFactory">
 			<ref local="sessionFactory" />
@@ -87,4 +87,4 @@
 	<bean id="userLogin" class="com.action.LoginAction" scope="prototype">
 		<property name="userService" ref="userService" />
 	</bean>
-		</beans>
+</beans>
