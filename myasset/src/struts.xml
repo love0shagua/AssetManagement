@@ -5,7 +5,7 @@
 <constant name="struts.objectFactory" value="spring"/>
 			<package name="struts2" extends="struts-default" >
 			
-			<action name="/userLogin" class="userLogin" method="userLogin">
+			<action name="userLogin" class="userLogin" method="userLogin">
 				<result name="ok">/index.jsp</result> 
 				<result name="no">/login.jsp</result>
 			</action>
