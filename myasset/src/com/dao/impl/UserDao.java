@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import com.dao.IUserDao;
-
+import com.entity.Userinformation;
 public class UserDao extends HibernateDaoSupport implements IUserDao {
 	private SessionFactory sessionFactory;
 	public SessionFactory getFactory() {
@@ -24,5 +24,17 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
 		return this.getHibernateTemplate().find("select userinformation from Userinformation as userinformation where userinformation.userid=? and userinformation.userpwd=?",o);
 		
 	}
+	
+	
+	  public boolean saveUser(Userinformation userinformation) {  
+//        logger.info("±£´æ");  
+        try {  
+            this.getHibernateTemplate().save(userinformation);  
+            return true;  
+        } catch (Exception e) {  
+            return false;  
+        }  
+    }  
+  
 
 }

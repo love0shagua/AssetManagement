@@ -87,4 +87,7 @@
 	<bean id="userLogin" class="com.action.LoginAction" scope="prototype">
 		<property name="userService" ref="userService" />
 	</bean>
+	<bean id="addUser" class="com.action.AddUserAction" scope="prototype">
+		<property name="userService" ref="userService" />
+	</bean>
 		</beans>

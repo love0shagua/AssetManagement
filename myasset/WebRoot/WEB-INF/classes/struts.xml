@@ -6,8 +6,13 @@
 			<package name="struts2" extends="struts-default" >
 			
 			<action name="userLogin" class="userLogin" method="userLogin">
-				<result name="ok">/index.jsp</result> 
+				<result name="ok">/adduser.jsp</result> 
 				<result name="no">/login.jsp</result>
+			</action>
+			
+			<action name="addUser" class="com.action.AddUserAction" method="addUser">
+				<result name="add">/index.jsp</result> 
+	
 			</action>
 		
 		</package>

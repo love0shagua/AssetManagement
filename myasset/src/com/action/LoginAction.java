@@ -2,6 +2,7 @@ package com.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.service.IUserService;
+import com.entity.Userinformation;
 
 public class LoginAction extends ActionSupport {
 	
@@ -41,6 +42,5 @@ public class LoginAction extends ActionSupport {
 		else
 			return "no";
 	}
-
-
+	
 }
