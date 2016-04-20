@@ -85,6 +85,6 @@
 	</bean>
 	<!-- Action -->
 	<bean id="userLogin" class="com.action.LoginAction" scope="prototype">
-		<property name="userService" ref="UserService" />
+		<property name="userService" ref="userService" />
 	</bean>
 		</beans>
