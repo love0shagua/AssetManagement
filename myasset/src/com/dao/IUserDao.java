@@ -6,5 +6,5 @@ import com.entity.Userinformation;
 
 public interface IUserDao {
 	public List getLoginUser(Integer userid,String userpwd);
-	 public boolean saveUser(Userinformation userinformation);
+	 public boolean saveUser(Object obj);
 }
