@@ -79,12 +79,24 @@
 			<ref local="sessionFactory" />
 		</property>
 	</bean>
+	<bean id="assetClassDao" class="com.dao.impl.AssetClassDao" >
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
 	<!-- Service -->
 	<bean id="userService" class="com.service.impl.UserService">
 		<property name="userDao" ref="userDao" />
 	</bean>
+		<bean id="assetClassService" class="com.service.impl.AssetClassService">
+		<property name="assetClassDao" ref="assetClassDao" />
+	</bean>
+	
 	<!-- Action -->
 	<bean id="userLogin" class="com.action.LoginAction" scope="prototype">
 		<property name="userService" ref="userService" />
+	</bean>
+	<bean id="AssetClass" class="com.action.AssetClassAction" scope="prototype">
+		<property name="assetClassService" ref="assetClassService" />
 	</bean>
 </beans>

@@ -2,25 +2,32 @@ package com.service.impl;
 
 import java.util.List;
 
+import com.dao.IAssetClassDao;
 import com.dao.IUserDao;
+import com.entity.Assetclass;
 import com.entity.Userinformation;
 import com.service.IAssetClassService;
 import com.service.IUserService;
 
 public class AssetClassService implements IAssetClassService {
-	private IUserDao userDao;
+	private IAssetClassDao assetClassDao;
 
-	public IUserDao getUserDao() {
-		return userDao;
+	
+	
+	public IAssetClassDao getAssetClassDao() {
+		return assetClassDao;
 	}
 
-	public void setUserDao(IUserDao userDao) {
-		this.userDao = userDao;
+
+
+	public void setAssetClassDao(IAssetClassDao assetClassDao) {
+		this.assetClassDao = assetClassDao;
 	}
-	
-	public boolean AddAssetClass(Integer userid,String userpwd) {
-	
-		return true;
+
+
+
+	public boolean addAssetClass(Assetclass assetclass) {
+		return assetClassDao.addAssetClass(assetclass);
 	}
 
 }

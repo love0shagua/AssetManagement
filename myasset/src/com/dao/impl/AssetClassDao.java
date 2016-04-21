@@ -21,9 +21,15 @@ public class AssetClassDao extends HibernateDaoSupport implements IAssetClassDao
 		this.sessionFactory = sessionFactory;//get/set������springע��ʱʹ��
 	}
 	
-	public boolean AddAssetClass(Integer userid,String userpwd){
-		return true;
+	public boolean addAssetClass(Object obj){
 		
+		try {
+			this.getHibernateTemplate().save(obj);  
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+
 	}
 
 }

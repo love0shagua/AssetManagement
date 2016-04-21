@@ -1,15 +1,16 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>My JSP 'addAsset.jsp' starting page</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -18,10 +19,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+
   </head>
   
   <body>
-    <jsp:forward page="/jsp/asset/addAssetClass.jsp"></jsp:forward> 
-    <%-- <jsp:forward page="/addAssetClass.jsp"></jsp:forward> --%>
+    <s:form action="addAssetClass">
+    <s:textfield name="assetclasscoding" label="assetclasscoding"></s:textfield>
+    <s:textfield name="assetclassname" label="assetclassname"></s:textfield>
+    <s:textfield name="iassetclassid" label="iassetclassid"></s:textfield>
+    <s:textfield name="iassetclassname" label="iassetclassname"></s:textfield>
+    <s:submit value="submit"></s:submit>
+    </s:form>
   </body>
 </html>

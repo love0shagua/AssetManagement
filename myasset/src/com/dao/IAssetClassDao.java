@@ -2,6 +2,8 @@ package com.dao;
 
 import java.util.List;
 
+import com.entity.Assetclass;
+
 public interface IAssetClassDao {
-	public boolean AddAssetClass(Integer userid,String userpwd);
+	public boolean addAssetClass(Object obj);
 }
