@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 
 import com.dao.IAssetClassDao;
 import com.dao.IUserDao;
+import com.entity.Assetclass;
 
 public class AssetClassDao extends HibernateDaoSupport implements IAssetClassDao {
 	private SessionFactory sessionFactory;
@@ -31,5 +32,37 @@ public class AssetClassDao extends HibernateDaoSupport implements IAssetClassDao
 		}
 
 	}
+	
+	public boolean removeAssetClass(Object obj){
+		
+		try {
+            this.getHibernateTemplate().delete(obj); 
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+		
+	}
+	
+	public boolean updateAssetClass(Object obj){
+		try {
+            this.getHibernateTemplate().update(obj); 
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public List findAllAssetClass(){
+		try {
+			return this.getHibernateTemplate().find("from Assetclass");  			
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	public Assetclass findAssetClass(int id){
+		return (Assetclass)this.getHibernateTemplate().get(Assetclass.class, id);
+	}
+
 
 }

@@ -29,5 +29,21 @@ public class AssetClassService implements IAssetClassService {
 	public boolean addAssetClass(Assetclass assetclass) {
 		return assetClassDao.addAssetClass(assetclass);
 	}
+	
+	public boolean removeAssetClass(Assetclass assetclass) {
+		return assetClassDao.removeAssetClass(assetclass);
+	}
+	
+	public boolean updateAssetClass(Assetclass assetclass){
+		return assetClassDao.updateAssetClass(assetclass);
+	}
+	
+	public List findAllAssetClass(){
+		return assetClassDao.findAllAssetClass();
+	}
+	
+	public Assetclass findAssetClass(int id){
+		return assetClassDao.findAssetClass(id);
+	}
 
 }
