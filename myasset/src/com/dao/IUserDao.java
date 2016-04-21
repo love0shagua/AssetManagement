@@ -10,4 +10,5 @@ public interface IUserDao {
     public List getUserList();
     public Userinformation getUser(Integer userid);
     public boolean saveOrUpdateUser(Object o);
+    public boolean deleteUser(Object o);
 }

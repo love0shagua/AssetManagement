@@ -99,4 +99,7 @@
 	<bean id="updateUser" class="com.action.UpdateUserAction" scope="prototype">
 	    <property name="userService" ref="userService"/>
 	</bean>
+	<bean id="deleteUser" class="com.action.DeleteUserAction" scope="prototype">
+	    <property name="userService" ref="userService"/>
+	</bean>
 </beans>

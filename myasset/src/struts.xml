@@ -22,5 +22,8 @@
 			<action name="updateUser" class="updateUser" method="updateUser">
 			<result type="redirect">userList.action</result> 
 			</action>
+			 <action name="deleteUser" class="deleteUser" method="deleteUser">
+            <result type="redirect">userList.action</result>
+            </action>
 		</package>
 </struts>    

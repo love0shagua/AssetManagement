@@ -51,11 +51,19 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
 	        try {  
 	        	
 	            this.getHibernateTemplate().saveOrUpdate(o); 
-	            System.out.println("=========="+o.getClass());
 	            return true;  
 	        } catch (Exception e) {  
 	        	
 	            return false;  
 	        }  
 	    }
+	  public boolean deleteUser(Object o) {  
+//        logger.info("É¾³ý");  
+        try {  
+            this.getHibernateTemplate().delete(o);  
+            return true;  
+        } catch (Exception e) {  
+            return false;  
+        }  
+    }
 }

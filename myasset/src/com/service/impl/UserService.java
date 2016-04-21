@@ -41,4 +41,8 @@ public class UserService implements IUserService {
     	userDao.saveOrUpdateUser(userinformation);
 		
 	}
+    public void deleteUser(Userinformation userinformation) {
+    	userDao.deleteUser(userinformation);
+    	
+    }
 }

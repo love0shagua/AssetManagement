@@ -10,4 +10,5 @@ public interface IUserService {
 	public List getUserList();
 	 public Userinformation getUser(Integer userid);
 	public void saveOrUpdateUser(Userinformation userinformation);
+	public void deleteUser(Userinformation userinformation);
 }
