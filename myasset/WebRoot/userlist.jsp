@@ -3,13 +3,14 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>My JSP 'userlist.jsp' starting page</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -18,9 +19,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+
   </head>
   
   <body>
-    This is my JSP page. test<br>
+    <s:iterator value="users">
+    <table>
+    <tr><td>userid</td><td><s:property value="userid"/></td></tr>
+    <tr><td>username</td><td><s:property value="username" /></td></tr>
+    <tr><td>userpwd</td><td><s:property value="userpwd"/></td></tr>
+    <tr><td>userstate</td><td><s:property value="userstate"/></td></tr>
+     <tr><td>usersex</td><td><s:property value="usersex"/></td></tr>
+    </tr>
+    </table>
+    </s:iterator>
   </body>
 </html>

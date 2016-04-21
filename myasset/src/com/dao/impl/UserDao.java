@@ -24,5 +24,21 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
 		return this.getHibernateTemplate().find("select userinformation from Userinformation as userinformation where userinformation.userid=? and userinformation.userpwd=?",o);
 		
 	}
+	
+	  public boolean add(Object o) {  
+//        logger.info("±£´æ");  
+        try {  
+            this.getHibernateTemplate().save(o);  
+            return true;  
+        } catch (Exception e) {  
+            return false;  
+        }  
+    }  
+	  
+	  public List getUserList() {
+			
+			return this.getHibernateTemplate().find("from Userinformation");
+		}
+  
 
 }

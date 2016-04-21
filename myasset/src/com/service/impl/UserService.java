@@ -25,5 +25,12 @@ public class UserService implements IUserService {
 		else
 		return null;
 	}
-
+	public void addUser(Userinformation userinformation) {
+		this.userDao.add(userinformation);
+	}
+	
+    public List getUserList() {
+		
+		return this.userDao.getUserList();
+	}
 }

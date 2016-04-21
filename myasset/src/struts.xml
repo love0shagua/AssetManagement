@@ -6,9 +6,15 @@
 			<package name="struts2" extends="struts-default" >
 			
 			<action name="userLogin" class="userLogin" method="userLogin">
-				<result name="ok">/index.jsp</result> 
+				<result name="ok">/adduser.jsp</result> 
 				<result name="no">/login.jsp</result>
 			</action>
-		
+			<action name="addUser" class="addUser" method="addUser"> 
+			<!-- class同applicationcontext的bean id method同Action中方法 -->
+				<result type="redirect">userList.action</result> 
+			</action>
+		    <action name="userList" class="userList" method="userList">
+				<result>/userlist.jsp</result> 
+			</action>
 		</package>
 </struts>    
