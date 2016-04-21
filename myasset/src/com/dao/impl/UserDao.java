@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import com.dao.IUserDao;
+import com.entity.Userinformation;;
 
 public class UserDao extends HibernateDaoSupport implements IUserDao {
 	private SessionFactory sessionFactory;
@@ -39,6 +40,22 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
 			
 			return this.getHibernateTemplate().find("from Userinformation");
 		}
-  
-
+	  
+	  public Userinformation getUser(Integer userid) {
+			
+			return (Userinformation)this.getHibernateTemplate().get(Userinformation.class, userid);
+		}
+	 
+	  public boolean saveOrUpdateUser(Object o) {  
+		
+	        try {  
+	        	
+	            this.getHibernateTemplate().saveOrUpdate(o); 
+	            System.out.println("=========="+o.getClass());
+	            return true;  
+	        } catch (Exception e) {  
+	        	
+	            return false;  
+	        }  
+	    }
 }

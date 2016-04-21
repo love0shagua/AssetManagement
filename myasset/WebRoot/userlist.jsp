@@ -24,13 +24,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <s:iterator value="users">
-    <table>
+    <table border="1" cellspacing="0">
     <tr><td>userid</td><td><s:property value="userid"/></td></tr>
     <tr><td>username</td><td><s:property value="username" /></td></tr>
     <tr><td>userpwd</td><td><s:property value="userpwd"/></td></tr>
     <tr><td>userstate</td><td><s:property value="userstate"/></td></tr>
-     <tr><td>usersex</td><td><s:property value="usersex"/></td></tr>
-    </tr>
+    <tr><td>usersex</td><td><s:property value="usersex"/></td></tr>
+    <tr><td align="center">
+    <a href="getUser.action?userid=<s:property value="userid" /> ">更新</a></td>
+    
+    <td align="center">
+   
+     <a href='<s:url action="deleteUser"><s:param name="userid" value="userid"></s:param></s:url>'>删除</a>
+    
+    </td>
+   </tr>
     </table>
     </s:iterator>
   </body>

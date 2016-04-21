@@ -5,7 +5,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.service.IUserService;
 import java.util.List;
 
-public class UserList extends ActionSupport {
+public class UserListAction extends ActionSupport {
 	private IUserService userService;
 	private List users;
 	public IUserService getUserService() {

@@ -4,8 +4,10 @@ import com.entity.Userinformation;
 import com.opensymphony.xwork2.ActionSupport;
 import com.service.IUserService;
 
-public class AddUserAction extends ActionSupport {
+public class UpdateUserAction extends ActionSupport {
 	private IUserService userService;
+	private Userinformation userinformation;
+	private Integer userid;
 	private String username;
 	private String userpwd;
 	private Integer userstate;
@@ -15,6 +17,12 @@ public class AddUserAction extends ActionSupport {
 	}
 	public void setUserService(IUserService userService) {
 		this.userService = userService;
+	}
+	public Integer getUserid() {
+		return userid;
+	}
+	public void setUserid(Integer userid) {
+		this.userid = userid;
 	}
 	public String getUsername() {
 		return username;
@@ -40,14 +48,26 @@ public class AddUserAction extends ActionSupport {
 	public void setUsersex(Integer usersex) {
 		this.usersex = usersex;
 	}
-	
-	public String addUser(){
-    Userinformation userinformation = new Userinformation();
-    userinformation.setUsername(username);
-    userinformation.setUserpwd(userpwd);
-    userinformation.setUsersex(usersex);
-    userinformation.setUserstate(userstate);
-    userService.addUser(userinformation);
-    return SUCCESS;
+	public Userinformation getUserinformation() {
+		return userinformation;
 	}
+	public void setUserinformation(Userinformation userinformation) {
+		this.userinformation = userinformation;
+	}
+	public String getUser(){
+		this.userinformation = userService.getUser(userid);
+		return SUCCESS;
+	}
+	
+	public String updateUser(){
+		Userinformation userinformation = new Userinformation();
+		userinformation.setUserid(userid);
+		userinformation.setUsername(username);
+		userinformation.setUserpwd(userpwd);
+		userinformation.setUsersex(usersex);
+	    userinformation.setUserstate(userstate);
+		userService.saveOrUpdateUser(userinformation);
+		return SUCCESS;
+	}
+
 }

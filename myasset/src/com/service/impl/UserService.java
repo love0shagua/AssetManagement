@@ -33,4 +33,12 @@ public class UserService implements IUserService {
 		
 		return this.userDao.getUserList();
 	}
+    public Userinformation getUser(Integer userid){
+    	return userDao.getUser(userid);
+    }
+    public void saveOrUpdateUser(Userinformation userinformation) {
+    	 
+    	userDao.saveOrUpdateUser(userinformation);
+		
+	}
 }

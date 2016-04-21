@@ -16,5 +16,11 @@
 		    <action name="userList" class="userList" method="userList">
 				<result>/userlist.jsp</result> 
 			</action>
+			 <action name="getUser" class="getUser" method="getUser">
+             <result>/updateuser.jsp</result>
+             </action>
+			<action name="updateUser" class="updateUser" method="updateUser">
+			<result type="redirect">userList.action</result> 
+			</action>
 		</package>
 </struts>    
