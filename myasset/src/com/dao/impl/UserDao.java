@@ -6,17 +6,18 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import com.dao.IUserDao;
+import com.entity.Userinformation;;
 
 public class UserDao extends HibernateDaoSupport implements IUserDao {
 	private SessionFactory sessionFactory;
 	public SessionFactory getFactory() {
 
-		return sessionFactory;//hibernate¡¡SessionFactory¶ÔÏó£¬ÓÉspring×¢Èë£®
+		return sessionFactory;//hibernateï¿½ï¿½SessionFactoryï¿½ï¿½ï¿½ï¿½ï¿½ï¿½spring×¢ï¿½ë£®
 	}
 
 	public void setFactory(SessionFactory sessionFactory) {
 
-		this.sessionFactory = sessionFactory;//get/set·½·¨ÔÚspring×¢ÈëÊ±Ê¹ÓÃ
+		this.sessionFactory = sessionFactory;//get/setï¿½ï¿½ï¿½ï¿½ï¿½ï¿½spring×¢ï¿½ï¿½Ê±Ê¹ï¿½ï¿½
 	}
 	
 	public List getLoginUser(Integer userid,String userpwd){
@@ -24,5 +25,43 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
 		return this.getHibernateTemplate().find("select userinformation from Userinformation as userinformation where userinformation.userid=? and userinformation.userpwd=?",o);
 		
 	}
-
+	
+	  public boolean add(Object o) {  
+        try {  
+            this.getHibernateTemplate().save(o);  
+            return true;  
+        } catch (Exception e) {  
+            return false;  
+        }  
+    }  
+	  
+	  public List getUserList() {
+			
+			return this.getHibernateTemplate().find("from Userinformation");
+		}
+	  
+	  public Userinformation getUser(Integer userid) {
+			
+			return (Userinformation)this.getHibernateTemplate().get(Userinformation.class, userid);
+		}
+	 
+	  public boolean saveOrUpdateUser(Object o) {  
+		
+	        try {  
+	        	
+	            this.getHibernateTemplate().saveOrUpdate(o); 
+	            return true;  
+	        } catch (Exception e) {  
+	        	
+	            return false;  
+	        }  
+	    }
+	  public boolean deleteUser(Object o) {  
+        try {  
+            this.getHibernateTemplate().delete(o);  
+            return true;  
+        } catch (Exception e) {  
+            return false;  
+        }  
+    }
 }

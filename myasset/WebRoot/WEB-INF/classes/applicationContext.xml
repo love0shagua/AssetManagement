@@ -85,6 +85,21 @@
 	</bean>
 	<!-- Action -->
 	<bean id="userLogin" class="com.action.LoginAction" scope="prototype">
-		<property name="userService" ref="userService" />
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="addUser" class="com.action.AddUserAction" scope="prototype">
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="userList" class="com.action.UserListAction" scope="prototype">
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="getUser" class="com.action.UpdateUserAction" scope="prototype">
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="updateUser" class="com.action.UpdateUserAction" scope="prototype">
+	    <property name="userService" ref="userService"/>
+	</bean>
+	<bean id="deleteUser" class="com.action.DeleteUserAction" scope="prototype">
+	    <property name="userService" ref="userService"/>
 	</bean>
 </beans>
