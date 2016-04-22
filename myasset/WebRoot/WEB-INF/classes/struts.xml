@@ -4,7 +4,10 @@
 <!-- <package name="login" extends="struts-default" namespace="/login"> -->
 <constant name="struts.objectFactory" value="spring"/>
 			<package name="struts2" extends="struts-default" >
-			
+			<action name="userLogin" class="userLogin" method="userLogin">
+				<result name="ok">/index.jsp</result>
+				<result name="no">/login.jsp</result>
+			</action>
 			<action name="addAssetClass" class="AssetClass" method="addAssetClass">
 				<result name="no">/err.jsp</result>
 				<result name="ok">/success.jsp</result>
