@@ -45,5 +45,7 @@
 				<result >/jsp/asset/assetClass.jsp</result>
 				<result name="no">/err.jsp</result>		
 			</action>
+			
+			
 		</package>
 </struts>    
