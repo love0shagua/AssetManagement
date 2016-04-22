@@ -12,12 +12,12 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
 	private SessionFactory sessionFactory;
 	public SessionFactory getFactory() {
 
-		return sessionFactory;//hibernate¡¡SessionFactory¶ÔÏó£¬ÓÉspring×¢Èë£®
+		return sessionFactory;//hibernateï¿½ï¿½SessionFactoryï¿½ï¿½ï¿½ï¿½ï¿½ï¿½spring×¢ï¿½ë£®
 	}
 
 	public void setFactory(SessionFactory sessionFactory) {
 
-		this.sessionFactory = sessionFactory;//get/set·½·¨ÔÚspring×¢ÈëÊ±Ê¹ÓÃ
+		this.sessionFactory = sessionFactory;//get/setï¿½ï¿½ï¿½ï¿½ï¿½ï¿½spring×¢ï¿½ï¿½Ê±Ê¹ï¿½ï¿½
 	}
 	
 	public List getLoginUser(Integer userid,String userpwd){
@@ -27,7 +27,6 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
 	}
 	
 	  public boolean add(Object o) {  
-//        logger.info("±£´æ");  
         try {  
             this.getHibernateTemplate().save(o);  
             return true;  
@@ -58,7 +57,6 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
 	        }  
 	    }
 	  public boolean deleteUser(Object o) {  
-//        logger.info("É¾³ý");  
         try {  
             this.getHibernateTemplate().delete(o);  
             return true;  

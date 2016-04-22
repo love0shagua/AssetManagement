@@ -27,9 +27,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <s:set value="userinformation" name="user"></s:set>
     <s:form action="updateUser"  >
-   <input name="userid" value="<%=request.getParameter("userid")%>">
-    username:<input name="username"  value="<s:property value="#user.username"/>"></input></br>
-    userpwd:<input name="userpwd"  value="<s:property value="#user.userpwd"/>"></input></br>
+   <input name="userid" type="hidden" value="<%=request.getParameter("userid")%>">
+    username:<input name="username"  value="<s:property value="userinformation.username"/>"></input></br>
+    userpwd:<input name="userpwd"  value="<s:property value="userinformation.userpwd"/>"></input></br> <!-- 两种取值方法 -->
     userstate:<input name="userstate"  value="<s:property value="#user.userstate"/>"></input></br>
     usersex:<input name="usersex"  value="<s:property value="#user.usersex"/>"></input></br>
 
