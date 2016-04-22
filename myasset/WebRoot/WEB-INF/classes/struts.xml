@@ -4,6 +4,7 @@
 <!-- <package name="login" extends="struts-default" namespace="/login"> -->
 <constant name="struts.objectFactory" value="spring"/>
 			<package name="struts2" extends="struts-default" >
+			
 			<action name="userLogin" class="userLogin" method="userLogin">
 				<result name="ok">/adduser.jsp</result> 
 				<result name="no">/login.jsp</result>
@@ -24,5 +25,27 @@
 			 <action name="deleteUser" class="deleteUser" method="deleteUser">
             <result type="redirect">userList.action</result>
             </action>
+            <action name="addAssetClass" class="AssetClass" method="addAssetClass">
+				<result name="no">/err.jsp</result>
+				<result name="ok">/success.jsp</result>
+			</action>
+			<action name="removeAssetClass" class="AssetClass" method="removeAssetClass">
+				<result name="no">/err.jsp</result>
+				<result name="ok">/success.jsp</result>
+			</action>
+			<action name="updateAssetClass" class="AssetClass" method="updateAssetClass">
+				<result name="no">/err.jsp</result>
+				<result name="ok">/success.jsp</result>
+			</action>
+			<action name="findAllAssetClass" class="com.action.AssetClassAction" method="findAllAssetClass">
+				<result >/jsp/asset/assetClassList.jsp</result>
+				<result name="no">/err.jsp</result>
+			</action>
+			<action name=" findAssetClass" class="com.action.AssetClassAction" method="findAssetClass">
+				<result >/jsp/asset/assetClass.jsp</result>
+				<result name="no">/err.jsp</result>
+				
+				
+			</action>
 		</package>
 </struts>    
