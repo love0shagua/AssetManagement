@@ -41,6 +41,7 @@
 				<result >/jsp/asset/assetClassList.jsp</result>
 				<result name="no">/err.jsp</result>
 			</action>
+			
 			<action name=" findAssetClass" class="com.action.AssetClassAction" method="findAssetClass">
 				<result >/jsp/asset/assetClass.jsp</result>
 				<result name="no">/err.jsp</result>
