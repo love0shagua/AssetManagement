@@ -21,6 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  	This is my JSP page, test<br>
     <jsp:forward page="/myasset/jsp/asset/addAssetClass.jsp"></jsp:forward> 
   </body>
 </html>

@@ -37,7 +37,7 @@ public class LoginAction extends ActionSupport {
 	
 	public String userLogin() {
 		if(userService.getLoginUser(userid, userpwd)!=null)
-			return SUCCESS;
+			return "ok";
 		else
 			return "no";
 	}
